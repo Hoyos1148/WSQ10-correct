@@ -1,0 +1,54 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+
+using namespace std;
+
+void fillvector(const vector<int>& )
+{
+	
+}
+
+void printvector(const vector<int>&)
+{
+	
+}
+
+void fillvector(vector<int>& Hoyin)
+{
+	cout<<"Type in a list of 10 numbers numbers, type -1 when you are done"<<endl;
+	int n;
+	cin>>n;
+	while(n != -1)
+	{
+		Hoyin.push_back(n);
+		cin>>n;
+	}
+}
+
+void printvector(vector<int>& Hoyin)
+{
+	float R, Av, Vap, VaP, VaF;  
+	R=0;
+	VaP=0;
+	for(unsigned int x=0; x < Hoyin.size(); x++)
+	{
+		R=R+Hoyin[x];
+		Av = R/Hoyin.size();
+		Vap = pow((Hoyin[x]- Av),2);
+		VaP = VaP + Vap;
+		VaF = sqrt(VaP/(Hoyin.size()-1));
+		
+	}
+	cout<<"The average is: "<< Av<<endl;
+	cout<<"The standard deviation is: "<< VaF<<endl;
+}
+
+int main()
+{   
+	int R;
+	vector<int> Hoyos;
+	fillvector(Hoyos);
+	printvector(Hoyos);
+	return 0;
+}
